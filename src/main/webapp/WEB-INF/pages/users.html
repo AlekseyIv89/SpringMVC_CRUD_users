@@ -5,37 +5,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Список пользователей</title>
-    <style>
-        table {
-            margin: auto;
-        }
-    </style>
 </head>
 <body>
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Имя</th>
-                    <th>Фамилия</th>
-                    <th>Возраст</th>
-                    <th>Город</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:if="${users.isEmpty()}">
-                    <td colspan="5" align="center">Ни один пользователь не найден</td>
-                </tr>
-                <tr th:each="user : ${users}">
-                    <td th:text="${user.getId()}">ID</td>
-                    <td th:text="${user.getName()}">Имя</td>
-                    <td th:text="${user.getSurname()}">Фамилия</td>
-                    <td th:text="${user.getAge()}">Возраст</td>
-                    <td th:text="${user.getCity()}">Город</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <h1>Список пользователей</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Возраст</th>
+                <th style="width: 80px"></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${users.isEmpty()}">
+                <td colspan="5" align="center">Ни один пользователь не найден</td>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.getId()}">ID</td>
+                <td th:text="${user.getName()}">Имя</td>
+                <td th:text="${user.getSurname()}">Фамилия</td>
+                <td th:text="${user.getAge()}">Возраст</td>
+                <td><a href="">Обновить</a></td>
+                <td><a href="">Удалить</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><a href="/new">Добавить пользователя</a></h3>
+
 </body>
 </html>

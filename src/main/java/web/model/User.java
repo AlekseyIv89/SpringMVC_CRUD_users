@@ -9,17 +9,14 @@ public class User {
 
     private int age;
 
-    private String city;
-
     public User() {
     }
 
-    public User(long id, String name, String surname, int age, String city) {
+    public User(long id, String name, String surname, int age) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.age = age;
-        this.city = city;
     }
 
     public long getId() {
@@ -52,13 +49,5 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 }
