@@ -22,7 +22,7 @@
         </thead>
         <tbody>
             <tr th:if="${users.isEmpty()}">
-                <td colspan="5" align="center">Ни один пользователь не найден</td>
+                <td colspan="4" align="center">Ни один пользователь не найден</td>
             </tr>
             <tr th:each="user : ${users}">
                 <td th:text="${user.getId()}">ID</td>
