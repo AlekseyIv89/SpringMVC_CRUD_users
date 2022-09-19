@@ -31,7 +31,7 @@ public class UserController {
     @PostMapping()
     public String createUser(@ModelAttribute("user") User user) {
         userService.createUser(user);
-        return "redirect: /";
+        return "redirect:/";
     }
 
     @GetMapping("/{id}/edit")
@@ -43,6 +43,6 @@ public class UserController {
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("user") User user, @PathVariable("id") int id) {
         userService.editUser(id, user);
-        return "redirect: /";
+        return "redirect:/";
     }
 }

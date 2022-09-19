@@ -16,7 +16,7 @@
                 <th>Имя</th>
                 <th>Фамилия</th>
                 <th>Возраст</th>
-                <th style="width: 80px"></th>
+                <th style="width: 100px"></th>
                 <th></th>
             </tr>
         </thead>
@@ -29,7 +29,7 @@
                 <td th:text="${user.getName()}">Имя</td>
                 <td th:text="${user.getSurname()}">Фамилия</td>
                 <td th:text="${user.getAge()}">Возраст</td>
-                <td><a th:href="@{/{id}(id=${user.getId()})/edit}">Редактировать</a></td>
+                <td><a th:href="@{/{id}/edit(id=${user.getId()})}">Редактировать</a></td>
                 <td><a href="">Удалить</a></td>
             </tr>
         </tbody>
