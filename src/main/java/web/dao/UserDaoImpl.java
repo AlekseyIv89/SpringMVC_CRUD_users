@@ -29,4 +29,17 @@ public class UserDaoImpl implements UserDao {
         user.setId(users.size() + 1);
         users.add(user);
     }
+
+    @Override
+    public User getUser(int id) {
+        return users.stream().filter(person -> person.getId() == id).findFirst().orElse(null);
+    }
+
+    @Override
+    public void editUser(int id, User user) {
+        User editedUser = getUser(id);
+        editedUser.setName(user.getName());
+        editedUser.setSurname(user.getSurname());
+        editedUser.setAge(user.getAge());
+    }
 }

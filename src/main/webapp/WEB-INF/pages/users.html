@@ -29,7 +29,7 @@
                 <td th:text="${user.getName()}">Имя</td>
                 <td th:text="${user.getSurname()}">Фамилия</td>
                 <td th:text="${user.getAge()}">Возраст</td>
-                <td><a href="">Обновить</a></td>
+                <td><a th:href="@{/{id}(id=${user.getId()})/edit}">Редактировать</a></td>
                 <td><a href="">Удалить</a></td>
             </tr>
         </tbody>
