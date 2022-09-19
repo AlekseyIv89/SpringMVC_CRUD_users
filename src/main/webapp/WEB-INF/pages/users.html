@@ -16,7 +16,7 @@
                 <th>Имя</th>
                 <th>Фамилия</th>
                 <th>Возраст</th>
-                <th style="width: 100px"></th>
+                <th></th>
                 <th></th>
             </tr>
         </thead>
@@ -29,8 +29,16 @@
                 <td th:text="${user.getName()}">Имя</td>
                 <td th:text="${user.getSurname()}">Фамилия</td>
                 <td th:text="${user.getAge()}">Возраст</td>
-                <td><a th:href="@{/{id}/edit(id=${user.getId()})}">Редактировать</a></td>
-                <td><a href="">Удалить</a></td>
+                <td>
+                    <form method="GET" th:action="@{/{id}/edit(id=${user.getId()})}">
+                        <input type="submit" value="Редактировать">
+                    </form>
+                </td>
+                <td>
+                    <form th:method="DELETE" th:action="@{/{id}(id=${user.getId()})}">
+                        <input type="submit" value="Удалить"/>
+                    </form>
+                </td>
             </tr>
         </tbody>
     </table>
