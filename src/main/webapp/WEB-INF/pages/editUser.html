@@ -15,14 +15,17 @@
             <tr>
                 <td><label for="name">Имя</label></td>
                 <td><input th:field="*{name}" type="text" id="name"/></td>
+                <td style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
             </tr>
             <tr>
                 <td><label for="surname">Фамилия</label></td>
                 <td><input th:field="*{surname}" type="text" id="surname"/></td>
+                <td style="color: red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname Error</td>
             </tr>
             <tr>
                 <td><label for="age">Возраст</label></td>
                 <td><input th:field="*{age}" type="text" id="age"/></td>
+                <td style="color: red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td>
             </tr>
             <tr>
                 <td></td>

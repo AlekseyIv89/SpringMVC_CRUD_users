@@ -1,6 +1,9 @@
 package web.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -10,12 +13,17 @@ public class User {
     private long id;
 
     @Column(length = 32)
+    @NotEmpty(message = "Введите имя")
+    @Size(min = 2, max = 32, message = "Имя должно быть от 2 до 32 символов")
     private String name;
 
     @Column
+    @NotEmpty(message = "Введите фамилию")
+    @Size(min = 2, message = "Фамилия должна содержать более 2 символов")
     private String surname;
 
     @Column
+    @Min(value = 0, message = "Возраст должен быть больше 0")
     private int age;
 
     public User() {
