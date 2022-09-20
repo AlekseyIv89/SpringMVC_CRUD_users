@@ -38,8 +38,8 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User getUser(long id) {
-        TypedQuery<User> typedQuery = entityManager.createQuery("select u from User u where u.id = :id", User.class);
-        typedQuery.setParameter("id", id);
+        TypedQuery<User> typedQuery = entityManager.createQuery("select u from User u where u.id = :id", User.class)
+                .setParameter("id", id);
         return typedQuery.getResultList().stream().findAny().orElse(null);
     }
 
