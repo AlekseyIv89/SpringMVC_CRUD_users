@@ -1,12 +1,23 @@
 package web.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
 public class User {
+    @Id
     private long id;
 
+    @Column
     private String name;
 
+    @Column
     private String surname;
 
+    @Column
     private int age;
 
     public User() {
