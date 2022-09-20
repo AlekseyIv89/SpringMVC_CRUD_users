@@ -11,19 +11,21 @@
 
     <form th:method="POST" th:action="@{/}" th:accept-charset="UTF-8" th:object="${user}">
         <table>
-            <thead>
-                <tr>
-                    <th><label for="name">Имя</label></th>
-                    <th><label for="surname">Фамилия</label></th>
-                    <th><label for="age">Возраст</label></th>
-                    <th></th>
-                </tr>
-            </thead>
             <tbody>
                 <tr>
+                    <td><label for="name">Имя</label></td>
                     <td><input th:field="*{name}" type="text" id="name"/></td>
+                </tr>
+                <tr>
+                    <td><label for="surname">Фамилия</label></td>
                     <td><input th:field="*{surname}" type="text" id="surname"/></td>
+                </tr>
+                <tr>
+                    <td><label for="age">Возраст</label></td>
                     <td><input th:field="*{age}" type="text" id="age"/></td>
+                </tr>
+                <tr>
+                    <td></td>
                     <td><input type="submit" value="Добавить"/></td>
                 </tr>
             </tbody>
