@@ -8,16 +8,15 @@ import java.util.List;
 
 @Repository
 public class UserDaoImpl implements UserDao {
-    private static long USERS_COUNT = 0;
     private final List<User> users;
 
     {
         users = new ArrayList<>();
-        users.add(new User(++USERS_COUNT, "Сергей", "Иванов", 20));
-        users.add(new User(++USERS_COUNT, "Алексей", "Петров", 42));
-        users.add(new User(++USERS_COUNT, "Михаил", "Уваров", 34));
-        users.add(new User(++USERS_COUNT, "Дмитрий", "Васильев", 18));
-        users.add(new User(++USERS_COUNT, "Евгений", "Виноградов", 26));
+        users.add(new User("Сергей", "Иванов", 20));
+        users.add(new User("Алексей", "Петров", 42));
+        users.add(new User("Михаил", "Уваров", 34));
+        users.add(new User("Дмитрий", "Васильев", 18));
+        users.add(new User("Евгений", "Виноградов", 26));
     }
 
     @Override
@@ -27,7 +26,6 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void createUser(User user) {
-        user.setId(++USERS_COUNT);
         users.add(user);
     }
 
