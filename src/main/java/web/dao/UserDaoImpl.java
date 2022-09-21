@@ -1,6 +1,5 @@
 package web.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import web.model.User;
 
@@ -14,17 +13,6 @@ import java.util.List;
 public class UserDaoImpl implements UserDao {
     @PersistenceContext(unitName = "entityManagerFactory")
     public EntityManager entityManager;
-
-    private final List<User> users;
-
-    {
-        users = new ArrayList<>();
-        users.add(new User("Сергей", "Иванов", 20));
-        users.add(new User("Алексей", "Петров", 42));
-        users.add(new User("Михаил", "Уваров", 34));
-        users.add(new User("Дмитрий", "Васильев", 18));
-        users.add(new User("Евгений", "Виноградов", 26));
-    }
 
     @Override
     public List<User> getAllUsers() {
